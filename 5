@@ -1,0 +1,16 @@
+def print_text_with_asterisks(text)
+  words = text.split(" ")
+  max_length = words.max_by(&:length).length
+
+  puts "*" * (max_length + 4)
+
+  words.each do |word|
+    spaces = " " * (max_length - word.length)
+    puts "* #{word}#{spaces} *"
+  end
+
+  puts "*" * (max_length + 4)
+end
+
+text = "Привет, мир!"
+print_text_with_asterisks(text)
